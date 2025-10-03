@@ -1,0 +1,71 @@
+FRN-15J0825/008
+set B
+
+q1.
+select name from customer
+order by name asc;
+
+q2.
+select porduct_name 
+from product
+order by price desc limit 10;
+
+q3.
+select salary from employee
+order by desc limit 1,1;
+
+q4.
+select city,count(*)
+from custumers
+group by city;
+
+q5.
+
+q6.select right(mobile,4),left(customer_name,3)
+from customer;
+
+q7.
+select * from products
+where product_name like 'pro';
+
+q8.
+select course,count(*)
+from student
+group by course
+having count(*)>=30;
+
+q9.
+select month,count(*)
+from order
+group by month;
+
+q10.
+select dep_id
+min(salary),max(salary)
+from employees
+group by dep_id;
+
+q11.
+data
+
+q12.
+order by desc;
+
+q13.
+asc
+
+q14.
+15.68
+
+q15.
+count()
+
+q16.
+
+
+
+
+
+
+
+
