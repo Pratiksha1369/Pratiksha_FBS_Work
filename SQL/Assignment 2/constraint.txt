@@ -1,0 +1,200 @@
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| assignment_0       |
+| assignment_2       |
+| assignment_3       |
+| college            |
+| ddl_comands        |
+| full_sql           |
+| function_practice  |
+| information_schema |
+| mysql              |
+| performance_schema |
+| practice_sql       |
+| sakila             |
+| sql_learning       |
+| sys                |
+| world              |
+| xyz                |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> use full_sql;
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_full_sql |
++--------------------+
+| employee_info      |
+| users              |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> create table unique_constraint(
+    -> id int unique,
+    -> name varchar(30),
+    -> age int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4
+mysql> create table unique_constraint(
+    -> id int unique,
+    -> name varchar(30),
+    -> age int not null);
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> desc unique_constraint;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  | UNI | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
+| age   | int         | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table primary(
+    -> id int primary key,
+    -> name varchar(10),
+    -> age int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary(
+id int primary key,
+name varchar(10),
+age int)' at line 1
+mysql> create table my_primary(
+    -> id int primary key,
+    -> name varchar(10),
+    -> age int);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc my_primary;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table my_primary2(
+    -> id int,
+    -> name varchar(20),
+    -> primary key(id));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc my_primary2;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create table credit_info(
+    -> id int primary key,
+    -> name varchar(30) not null,
+    -> phone varchar(10) unique);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> desc credit_info;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(30) | NO   |     | NULL    |       |
+| phone | varchar(10) | YES  | UNI | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table my_default(
+    -> id int primary key,
+    -> name varchar(30) not null,
+    -> phone varchar(10) unique,
+    -> salary double(7,2) default 25000);
+Query OK, 0 rows affected, 1 warning (0.08 sec)
+
+mysql> desc my_default;
++--------+-------------+------+-----+----------+-------+
+| Field  | Type        | Null | Key | Default  | Extra |
++--------+-------------+------+-----+----------+-------+
+| id     | int         | NO   | PRI | NULL     |       |
+| name   | varchar(30) | NO   |     | NULL     |       |
+| phone  | varchar(10) | YES  | UNI | NULL     |       |
+| salary | double(7,2) | YES  |     | 25000.00 |       |
++--------+-------------+------+-----+----------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into my_default(
+    -> id,name,phone,salary)
+    -> values
+    -> (1,'loid','12345',100000),
+    -> (2,'yor','123452',50000),
+    -> (3,'ania','123456'));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+mysql> insert into my_default(
+    -> id,name,phone,salary)
+    -> values
+    -> (1,'loid','12345',100000),
+    -> (2,'yor','123452',50000),
+    -> (3,'ania','123456');
+ERROR 1136 (21S01): Column count doesn't match value count at row 3
+mysql> insert into my_default(
+    -> id,name,phone,salary)
+    -> values
+    -> (1,'loid','12345',100000),
+    -> (2,'yor','123452',50000),
+    -> (3,'ania','123456',default);
+ERROR 1264 (22003): Out of range value for column 'salary' at row 1
+mysql> id,name,phone,salary)
+    -> values;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id,name,phone,salary)
+values' at line 1
+mysql> insert into my_default(
+    -> id,name,phone,salary)
+    -> values
+    -> (1,'loid','12345',90000),
+    -> (2,'yor','123452',50000),
+    -> (3,'ania','123456',default);
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from my_default;
++----+------+--------+----------+
+| id | name | phone  | salary   |
++----+------+--------+----------+
+|  1 | loid | 12345  | 90000.00 |
+|  2 | yor  | 123452 | 50000.00 |
+|  3 | ania | 123456 | 25000.00 |
++----+------+--------+----------+
+3 rows in set (0.00 sec)
+
+mysql> insert into my_default
+    -> values
+    -> (1,'loid','12345',90000),
+    -> (2,'yor','123452',50000),
+    -> (3,'ania','123456');
+ERROR 1136 (21S01): Column count doesn't match value count at row 3
+mysql> insert into my_default
+    -> values
+    -> (1,'loid','12345');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into my_default
+    -> values
+    -> (1,'levi','1234568');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql>

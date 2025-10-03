@@ -1,0 +1,26 @@
+>
+mysql> insert into department
+    -> values
+    -> (90,'research',301,2500),
+    -> (100,'marketing',302,2600),
+    -> (110,'hr operation',303,2700);
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select *from department;
++--------+------------------+------------+-------------+
+| dep_id | dep_name         | manager_id | location_id |
++--------+------------------+------------+-------------+
+|     10 | administration   |        200 |        1700 |
+|     20 | marketing        |        201 |        1800 |
+|     30 | purchasing       |        114 |        1700 |
+|     40 | human resources  |        203 |        2400 |
+|     50 | shipping         |        121 |        1500 |
+|     60 | it               |        103 |        1400 |
+|     70 | public relations |        204 |        2700 |
+|     80 | sales            |        145 |        2500 |
+|     90 | research         |        301 |        2500 |
+|    100 | marketing        |        302 |        2600 |
+|    110 | hr operation     |        303 |        2700 |
++--------+------------------+------------+-------------+
+11 rows in set (0.00 sec)

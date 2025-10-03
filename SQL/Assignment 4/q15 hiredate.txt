@@ -1,0 +1,12 @@
+select first_name,last_name,hire_date
+    -> from employees
+    -> where year(hire_date)=1987;
++------------+-----------+------------+
+| first_name | last_name | hire_date  |
++------------+-----------+------------+
+| John       | Smith     | 1987-05-15 |
+| Robert     | Scott     | 1987-11-01 |
+| Becky      | Carter    | 1987-04-22 |
+| Betty      | Clark     | 1987-09-20 |
++------------+-----------+------------+
+4 rows in set (0.03 sec)

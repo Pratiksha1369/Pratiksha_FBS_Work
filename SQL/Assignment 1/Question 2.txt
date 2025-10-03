@@ -1,0 +1,22 @@
+2. Write an SQL statement to create a simple table countries including columns
+country_id,country_name and region_id. After this display the structure of
+table as below :
+
+
+mysql> use assignment_0;
+Database changed
+mysql> create table ciuntries(
+    -> country_id int,
+    -> country_name varchar(30),
+    -> region_id int);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc ciuntries;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  |     | NULL    |       |
+| country_name | varchar(30) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)

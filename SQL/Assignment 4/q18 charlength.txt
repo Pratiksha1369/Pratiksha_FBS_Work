@@ -1,0 +1,8 @@
+select last_name
+    -> from employees
+    -> where char_length(last_name)=6;
++-----------+
+| last_name |
++-----------+
+| Carter    |
++-----------+

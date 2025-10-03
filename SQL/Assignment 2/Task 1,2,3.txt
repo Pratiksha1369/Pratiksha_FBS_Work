@@ -1,0 +1,87 @@
+1) Create the table Member, Books and Issue without any constraints as
+mentioned in the schema description above.
+
+2) View the structure of the tables.
+3) Drop the Member table
+
+
+
+mysql> use assignment_2;
+Database changed
+mysql> create table member(
+    -> member_id int,
+    -> member_name varchar(30),
+    -> member_address varchar(50),
+    -> acc_open_date date,
+    -> membership_type varchar(20),
+    -> fees_paid int,
+    -> max_books_allowed int,
+    -> penalty_amount decimal(7,2));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc member;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| member_id         | int          | YES  |     | NULL    |       |
+| member_name       | varchar(30)  | YES  |     | NULL    |       |
+| member_address    | varchar(50)  | YES  |     | NULL    |       |
+| acc_open_date     | date         | YES  |     | NULL    |       |
+| membership_type   | varchar(20)  | YES  |     | NULL    |       |
+| fees_paid         | int          | YES  |     | NULL    |       |
+| max_books_allowed | int          | YES  |     | NULL    |       |
+| penalty_amount    | decimal(7,2) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> create table books(
+    -> book_no int,
+    -> book_name varchar(30),
+    -> author_name varchar(30),
+    -> cost decimal(7,2),
+    -> category char(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc books;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| book_no     | int          | YES  |     | NULL    |       |
+| book_name   | varchar(30)  | YES  |     | NULL    |       |
+| author_name | varchar(30)  | YES  |     | NULL    |       |
+| cost        | decimal(7,2) | YES  |     | NULL    |       |
+| category    | char(10)     | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table issue(
+    -> lib_issue_id int,
+    -> book_no int,
+    -> member_id int,
+    -> issue_date date,
+    -> return_date date);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc issue;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| lib_issue_id | int  | YES  |     | NULL    |       |
+| book_no      | int  | YES  |     | NULL    |       |
+| member_id    | int  | YES  |     | NULL    |       |
+| issue_date   | date | YES  |     | NULL    |       |
+| return_date  | date | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> drop table member;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_assignment_2 |
++------------------------+
+| books                  |
+| issue                  |
++------------------------+
+2 rows in set (0.00 sec)

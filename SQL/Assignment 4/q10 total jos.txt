@@ -1,0 +1,9 @@
+select count(job_id)
+    -> as total_jobs
+    -> from employees;
++------------+
+| total_jobs |
++------------+
+|         10 |
++------------+
+1 row in set (0.00 sec)

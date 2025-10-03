@@ -1,0 +1,17 @@
+select first_name,last_name,salary,pf
+    -> from employees;
++------------+-----------+--------+------+
+| first_name | last_name | salary | pf   |
++------------+-----------+--------+------+
+| John       | Smith     |  12000 | 1800 |
+| Alice      | Blake     |  15000 | 2250 |
+| Robert     | Scott     |   9000 | 1350 |
+| Maria      | King      |  20000 | 3000 |
+| David      | Ford      |   8000 | 1200 |
+| Becky      | Carter    |  11000 | 1650 |
+| Bruce      | Wayne     |  17000 | 2550 |
+| Clara      | Evans     |  14000 | 2100 |
+| Chris      | Brown     |  13000 | 1950 |
+| Betty      | Clark     |   9500 | 1425 |
++------------+-----------+--------+------+
+10 rows in set (0.00 sec)

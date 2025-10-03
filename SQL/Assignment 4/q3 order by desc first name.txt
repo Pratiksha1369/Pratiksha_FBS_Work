@@ -1,0 +1,16 @@
+ select * from employees
+    -> order by first_name desc;
++-------------+------------+-----------+---------+--------+--------+------------+----------------------+
+| employee_id | first_name | last_name | dept_id | salary | job_id | hire_date  | job_title            |
++-------------+------------+-----------+---------+--------+--------+------------+----------------------+
+|         103 | Robert     | Scott     |      30 |   9000 |      3 | 1987-11-01 | Shipping Clerk       |
+|         104 | Maria      | King      |      60 |  20000 |      4 | 1989-07-12 | Manager              |
+|         101 | John       | Smith     |      30 |  12000 |      1 | 1987-05-15 | Programmer           |
+|         105 | David      | Ford      |     100 |   8000 |      2 | 1995-03-10 | Accountant           |
+|         108 | Clara      | Evans     |     100 |  14000 |      2 | 1991-12-11 | Accountant           |
+|         109 | Chris      | Brown     |      60 |  13000 |      1 | 1988-06-05 | Programmer           |
+|         107 | Bruce      | Wayne     |      90 |  17000 |      5 | 1992-01-15 | Sales Representative |
+|         110 | Betty      | Clark     |      30 |   9500 |      3 | 1987-09-20 | Shipping Clerk       |
+|         106 | Becky      | Carter    |      30 |  11000 |      1 | 1987-04-22 | Programmer           |
+|         102 | Alice      | Blake     |     100 |  15000 |      2 | 1990-09-23 | Accountant           |
++-------------+------------+-----------+--------

@@ -1,0 +1,68 @@
+
+7) Delete/Drop the column Reference from Issue.
+
+8) Rename the table Issue to Lib_Issue.
+
+
+mysql> desc issue;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| lib_issue_id | int  | YES  |     | NULL    |       |
+| book_no      | int  | YES  |     | NULL    |       |
+| member_id    | int  | YES  |     | NULL    |       |
+| issue_date   | date | YES  |     | NULL    |       |
+| return_date  | date | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> alter table issue
+    -> drop column reference;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc issue;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| lib_issue_id | int  | YES  |     | NULL    |       |
+| book_no      | int  | YES  |     | NULL    |       |
+| member_id    | int  | YES  |     | NULL    |       |
+| issue_date   | date | YES  |     | NULL    |       |
+| return_date  | date | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table issue
+    -> rename to Lib_Issue;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> show tables;
++------------------------+
+| Tables_in_assignment_2 |
++------------------------+
+| books                  |
+| lib_issue              |
+| member                 |
++------------------------+
+3 rows in set (0.00 sec)
+
+
+
+
+ INSERT INTO member
+    -> (member_id, member_name, member_address, acc_open_date, fees_paid, max_books_allowed, penalty_amount, memebership_type)
+    -> VALUES
+    -> (1, 'richa sherma', 'pune', '2005-12-10', 25000, 5, 50.00, 'lifetime'),
+    -> (2, 'garima sen', 'pune', CURDATE(), 1000, 3, NULL, 'annual');
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select*from member;
++-----------+--------------+----------------+---------------+-----------+-------------------+----------------+------------------+
+| member_id | member_name  | member_address | acc_open_date | fees_paid | max_books_allowed | penalty_amount | memebership_type |
++-----------+--------------+----------------+---------------+-----------+-------------------+----------------+------------------+
+|         1 | richa sherma | pune           | 2005-12-10    |     25000 |                 5 |          50.00 | lifetime         |
+|         2 | garima sen   | pune           | 2025-09-28    |      1000 |                 3 |           NULL | annual           |
++-----------+--------------+----------------+---------------+-----------+-------------------+----------------+------------------+

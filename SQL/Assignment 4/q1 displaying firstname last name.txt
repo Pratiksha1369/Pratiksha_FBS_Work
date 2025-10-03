@@ -1,0 +1,62 @@
+ create table employees(
+    -> employee_id int primary key,
+    -> first_name varchar(30),
+    -> last_name varchar(30),
+    -> dept_id int,
+    -> salary int,
+    -> job_id int,
+    -> hire_date date,
+    -> job_title varchar(30));
+Query OK, 0 rows affected (0.06 sec)
+
+
+INSERT INTO employees (employee_id, first_name, last_name, dept_id, salary, job_id, hire_date, job_title)
+    -> VALUES
+    -> (101, 'John', 'Smith', 30, 12000, 1, '1987-05-15', 'Programmer'),
+    -> (102, 'Alice', 'Blake', 100, 15000, 2, '1990-09-23', 'Accountant'),
+    -> (103, 'Robert', 'Scott', 30, 9000, 3, '1987-11-01', 'Shipping Clerk'),
+    -> (104, 'Maria', 'King', 60, 20000, 4, '1989-07-12', 'Manager'),
+    -> (105, 'David', 'Ford', 100, 8000, 2, '1995-03-10', 'Accountant'),
+    -> (106, 'Becky', 'Carter', 30, 11000, 1, '1987-04-22', 'Programmer'),
+    -> (107, 'Bruce', 'Wayne', 90, 17000, 5, '1992-01-15', 'Sales Representative'),
+    -> (108, 'Clara', 'Evans', 100, 14000, 2, '1991-12-11', 'Accountant'),
+    -> (109, 'Chris', 'Brown', 60, 13000, 1, '1988-06-05', 'Programmer'),
+    -> (110, 'Betty', 'Clark', 30, 9500, 3, '1987-09-20', 'Shipping Clerk');
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees;
++-------------+------------+-----------+---------+--------+--------+------------+----------------------+
+| employee_id | first_name | last_name | dept_id | salary | job_id | hire_date  | job_title            |
++-------------+------------+-----------+---------+--------+--------+------------+----------------------+
+|         101 | John       | Smith     |      30 |  12000 |      1 | 1987-05-15 | Programmer           |
+|         102 | Alice      | Blake     |     100 |  15000 |      2 | 1990-09-23 | Accountant           |
+|         103 | Robert     | Scott     |      30 |   9000 |      3 | 1987-11-01 | Shipping Clerk       |
+|         104 | Maria      | King      |      60 |  20000 |      4 | 1989-07-12 | Manager              |
+|         105 | David      | Ford      |     100 |   8000 |      2 | 1995-03-10 | Accountant           |
+|         106 | Becky      | Carter    |      30 |  11000 |      1 | 1987-04-22 | Programmer           |
+|         107 | Bruce      | Wayne     |      90 |  17000 |      5 | 1992-01-15 | Sales Representative |
+|         108 | Clara      | Evans     |     100 |  14000 |      2 | 1991-12-11 | Accountant           |
+|         109 | Chris      | Brown     |      60 |  13000 |      1 | 1988-06-05 | Programmer           |
+|         110 | Betty      | Clark     |      30 |   9500 |      3 | 1987-09-20 | Shipping Clerk       |
++-------------+------------+-----------+---------+--------+--------+------------+----------------------+
+10 rows in set (0.00 sec)
+
+mysql> select first_name, last_name
+    -> from employee;
+ERROR 1146 (42S02): Table 'assignment_4.employee' doesn't exist
+mysql> select first_name, last_name
+    -> from employees;
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| John       | Smith     |
+| Alice      | Blake     |
+| Robert     | Scott     |
+| Maria      | King      |
+| David      | Ford      |
+| Becky      | Carter    |
+| Bruce      | Wayne     |
+| Clara      | Evans     |
+| Chris      | Brown     |
+| Betty      | Clark     |

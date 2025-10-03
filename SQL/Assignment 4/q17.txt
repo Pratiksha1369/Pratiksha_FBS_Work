@@ -1,0 +1,13 @@
+ select last_name,job_title,salary
+    -> from employees
+    -> where job_title in ('Programmer','Shipping Clerk')
+    -> and salary not in (4500,10000,15000);
++-----------+----------------+--------+
+| last_name | job_title      | salary |
++-----------+----------------+--------+
+| Smith     | Programmer     |  12000 |
+| Scott     | Shipping Clerk |   9000 |
+| Carter    | Programmer     |  11000 |
+| Brown     | Programmer     |  13000 |
+| Clark     | Shipping Clerk |   9500 |
++-----------+----------------+-------

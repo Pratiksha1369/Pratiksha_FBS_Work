@@ -1,0 +1,13 @@
+ select first_name,last_name,dept_id
+    -> from employees
+    -> where dept_id in (30,100);
++------------+-----------+---------+
+| first_name | last_name | dept_id |
++------------+-----------+---------+
+| John       | Smith     |      30 |
+| Alice      | Blake     |     100 |
+| Robert     | Scott     |      30 |
+| David      | Ford      |     100 |
+| Becky      | Carter    |      30 |
+| Clara      | Evans     |     100 |
+| Betty      | Clark     |      30 |

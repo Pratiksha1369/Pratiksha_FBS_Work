@@ -1,0 +1,9 @@
+ select min(salary) as minimum_salary,
+    -> max(salary) as maximum_salary
+    -> from employees;
++----------------+----------------+
+| minimum_salary | maximum_salary |
++----------------+----------------+
+|           8000 |          20000 |
++----------------+----------------+
+1 row in set (0.03 sec)

@@ -1,0 +1,58 @@
+mysql> create table department(
+    -> dep_id int,
+    -> dep_name varchar(20),
+    -> manager_id int,
+    -> location_id int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into department
+    -> values
+    -> (10,'administration',200,1700),
+    -> (20,'marketing',201,1800),
+    -> (30,'purchasing',114,1700),
+    -> (40,'human resources',203,2400),
+    -> (40,'shipping',121,1500),
+    -> (60,'it',103,1400),
+    -> (70,'public relations',204,2700),
+    -> (80,'sales',145,2500);
+Query OK, 8 rows affected (0.02 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> select * from department;
++--------+------------------+------------+-------------+
+| dep_id | dep_name         | manager_id | location_id |
++--------+------------------+------------+-------------+
+|     10 | administration   |        200 |        1700 |
+|     20 | marketing        |        201 |        1800 |
+|     30 | purchasing       |        114 |        1700 |
+|     40 | human resources  |        203 |        2400 |
+|     40 | shipping         |        121 |        1500 |
+|     60 | it               |        103 |        1400 |
+|     70 | public relations |        204 |        2700 |
+|     80 | sales            |        145 |        2500 |
++--------+------------------+------------+-------------+
+8 rows in set (0.00 sec)
+
+
+
+
+ update department
+    -> set dep_id=50
+    -> where dep_name='shipping';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from department;
++--------+------------------+------------+-------------+
+| dep_id | dep_name         | manager_id | location_id |
++--------+------------------+------------+-------------+
+|     10 | administration   |        200 |        1700 |
+|     20 | marketing        |        201 |        1800 |
+|     30 | purchasing       |        114 |        1700 |
+|     40 | human resources  |        203 |        2400 |
+|     50 | shipping         |        121 |        1500 |
+|     60 | it               |        103 |        1400 |
+|     70 | public relations |        204 |        2700 |
+|     80 | sales            |        145 |        2500 |
++--------+------------------+------------+-------------+
+8 rows in set (0.00 sec)

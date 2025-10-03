@@ -1,0 +1,12 @@
+ select first_name,last_name salary
+    -> from employees
+    -> where salary not between 10000 and 15000
+    -> and dept_id in(30,100);
++------------+--------+
+| first_name | salary |
++------------+--------+
+| Robert     | Scott  |
+| David      | Ford   |
+| Betty      | Clark  |
++------------+--------+
+3 rows in set (0.00 sec)

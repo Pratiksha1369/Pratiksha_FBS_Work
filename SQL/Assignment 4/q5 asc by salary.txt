@@ -1,0 +1,17 @@
+select employee_id,first_name,last_name,salary
+    -> from employees
+    -> order by salary;
++-------------+------------+-----------+--------+
+| employee_id | first_name | last_name | salary |
++-------------+------------+-----------+--------+
+|         105 | David      | Ford      |   8000 |
+|         103 | Robert     | Scott     |   9000 |
+|         110 | Betty      | Clark     |   9500 |
+|         106 | Becky      | Carter    |  11000 |
+|         101 | John       | Smith     |  12000 |
+|         109 | Chris      | Brown     |  13000 |
+|         108 | Clara      | Evans     |  14000 |
+|         102 | Alice      | Blake     |  15000 |
+|         107 | Bruce      | Wayne     |  17000 |
+|         104 | Maria      | King      |  20000 |
++-------------+------------+-----------+-------

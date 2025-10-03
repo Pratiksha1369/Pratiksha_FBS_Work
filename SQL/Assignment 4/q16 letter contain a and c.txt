@@ -1,0 +1,11 @@
+ select first_name
+    -> from employees
+    -> where first_name like '%b%'
+    -> and first_name like '%c%';
++------------+
+| first_name |
++------------+
+| Becky      |
+| Bruce      |
++------------+
+2 rows in set (0.00 sec)

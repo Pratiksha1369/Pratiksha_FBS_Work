@@ -1,0 +1,11 @@
+
+mysql> select distinct dept_id
+    -> from employees;
++---------+
+| dept_id |
++---------+
+|      30 |
+|     100 |
+|      60 |
+|      90 |
++---------+

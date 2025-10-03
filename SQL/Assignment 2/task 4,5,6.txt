@@ -1,0 +1,65 @@
+alter table member
+    -> add memebership_type enum('lifetime','annual','half yearly','quartly');
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc member;
++-------------------+---------------------------------------------------+------+-----+---------+-------+
+| Field             | Type                                              | Null | Key | Default | Extra |
++-------------------+---------------------------------------------------+------+-----+---------+-------+
+| member_id         | int                                               | NO   | PRI | NULL    |       |
+| member_name       | varchar(30)                                       | YES  |     | NULL    |       |
+| member_address    | varchar(50)                                       | YES  |     | NULL    |       |
+| acc_open_date     | date                                              | YES  |     | NULL    |       |
+| membership_type   | varchar(20)                                       | YES  |     | NULL    |       |
+| fees_paid         | int                                               | YES  |     | NULL    |       |
+| max_books_allowed | int                                               | YES  |     | NULL    |       |
+| penalty_amount    | decimal(7,2)                                      | YES  |     | NULL    |       |
+| memebership_type  | enum('lifetime','annual','half yearly','quartly') | YES  |     | NULL    |       |
++-------------------+---------------------------------------------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+
+
+ alter table member
+    -> modify member_name varchar(60);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc member;
++-------------------+---------------------------------------------------+------+-----+---------+-------+
+| Field             | Type                                              | Null | Key | Default | Extra |
++-------------------+---------------------------------------------------+------+-----+---------+-------+
+| member_id         | int                                               | NO   | PRI | NULL    |       |
+| member_name       | varchar(60)                                       | YES  |     | NULL    |       |
+| member_address    | varchar(50)                                       | YES  |     | NULL    |       |
+| acc_open_date     | date                                              | YES  |     | NULL    |       |
+| membership_type   | varchar(20)                                       | YES  |     | NULL    |       |
+| fees_paid         | int                                               | YES  |     | NULL    |       |
+| max_books_allowed | int                                               | YES  |     | NULL    |       |
+| penalty_amount    | decimal(7,2)                                      | YES  |     | NULL    |       |
+| memebership_type  | enum('lifetime','annual','half yearly','quartly') | YES  |     | NULL    |       |
++-------------------+---------------------------------------------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+
+
+
+
+mysql> alter table lib_issue
+    -> add reference varchar(30);
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc lib_issue;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| lib_issue_id | int         | YES  |     | NULL    |       |
+| book_no      | int         | YES  |     | NULL    |       |
+| member_id    | int         | YES  |     | NULL    |       |
+| issue_date   | date        | YES  |     | NULL    |       |
+| return_date  | date        | YES  |     | NULL    |       |
+| reference    | varchar(30) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)

@@ -1,0 +1,9 @@
+ select avg(salary) as avg_salary,
+    -> count(*) as total_No_of_emp
+    -> from employees;
++------------+-----------------+
+| avg_salary | total_No_of_emp |
++------------+-----------------+
+| 12850.0000 |              10 |
++------------+-----------------+
+1 row in set (0.00 sec)

@@ -1,0 +1,7 @@
+ select count(employee_id) as total_no_of_emp
+    -> from employees;
++-----------------+
+| total_no_of_emp |
++-----------------+
+|              10 |
++-----------------+

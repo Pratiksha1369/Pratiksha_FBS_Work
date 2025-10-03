@@ -1,0 +1,12 @@
+select first_name,last_name, salary
+    -> from employees
+    -> where salary not between 10000 and 15000;
++------------+-----------+--------+
+| first_name | last_name | salary |
++------------+-----------+--------+
+| Robert     | Scott     |   9000 |
+| Maria      | King      |  20000 |
+| David      | Ford      |   8000 |
+| Bruce      | Wayne     |  17000 |
+| Betty      | Clark     |   9500 |
++------------+-----------+--------+

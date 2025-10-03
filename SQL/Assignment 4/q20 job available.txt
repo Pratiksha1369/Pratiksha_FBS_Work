@@ -1,0 +1,16 @@
+select job_title
+    -> from employees;
++----------------------+
+| job_title            |
++----------------------+
+| Programmer           |
+| Accountant           |
+| Shipping Clerk       |
+| Manager              |
+| Accountant           |
+| Programmer           |
+| Sales Representative |
+| Accountant           |
+| Programmer           |
+| Shipping Clerk       |
++----------------------+
